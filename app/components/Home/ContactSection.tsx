@@ -57,7 +57,9 @@ export default function ContactSection() {
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 via-indigo-500 to-cyan-400 opacity-70 blur-md transition-opacity duration-300 group-hover:opacity-100" />
 
             <a
-              href="mailto:umair@example.com"
+              href="https://www.linkedin.com/in/muhammad-umair-20a5462ab/"
+              target="_blank"
+
               className="relative inline-flex max-w-full items-center justify-center gap-2 rounded-full bg-slate-950/90 px-5 py-4 text-center text-sm font-bold uppercase tracking-wider text-white backdrop-blur-xl transition-all duration-300 hover:bg-slate-900 hover:text-blue-400 sm:px-10"
             >
               <span>Start A Conversation</span>
@@ -75,23 +77,23 @@ export default function ContactSection() {
           className="mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-4 md:gap-8"
         >
           <a
-            href="mailto:umair@example.com"
+            href="mailto:rajputumair0301@gmail.com"
             className="group flex min-w-0 max-w-full items-center gap-2 text-sm text-slate-400 transition-colors hover:text-blue-400"
           >
             <Mail className="h-4 w-4 text-blue-400 transition-transform duration-300 group-hover:scale-110" />
-            <span className="break-all font-semibold">umair@example.com</span>
+            <span className="break-all font-semibold">rajputumair0301@gmail.com</span>
           </a>
 
-          <a
+          {/* <a
             href="tel:+923000000000"
             className="group flex min-w-0 max-w-full items-center gap-2 text-sm text-slate-400 transition-colors hover:text-blue-400"
           >
             <Phone className="h-4 w-4 text-blue-400 transition-transform duration-300 group-hover:scale-110" />
             <span className="font-semibold">+92 300 0000000</span>
-          </a>
+          </a> */}
 
           <a
-            href="https://github.com"
+            href="https://github.com/Muhammad-Umair10"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex min-w-0 max-w-full items-center gap-2 text-sm text-slate-400 transition-colors hover:text-blue-400"

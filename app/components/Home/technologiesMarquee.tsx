@@ -20,7 +20,7 @@ export default function TechnologiesMarquee() {
       id="technologies"
       role="region"
       aria-label="Technology stack and hosting"
-      className="relative flex w-full flex-col items-center justify-center overflow-hidden border-y border-white/5 py-6 sm:py-8"
+      className="relative flex w-full flex-col items-center justify-center overflow-hidden py-6 sm:py-8"
     >
       <div className="group w-full overflow-hidden [--duration:30s]">
         <div

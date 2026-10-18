@@ -174,9 +174,6 @@ export default function ServicesSection() {
       <div>
         {/* Header Content */}
         <Reveal className="mx-auto max-w-4xl px-6 text-center">
-          <p className="text-xs font-medium uppercase tracking-[2.5px] text-foreground/75">
-            Services
-          </p>
           <h2 className="mt-5 font-display text-3xl font-bold tracking-tight md:text-5xl">
             Digital services for every stage of your project
           </h2>

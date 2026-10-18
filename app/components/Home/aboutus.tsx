@@ -27,9 +27,6 @@ export default function AboutMe() {
     <section id="about" className="scroll-mt-24 mx-auto w-full max-w-[1900px]  px-5 py-16 sm:px-8 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-            About me
-          </p>
           <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight text-white sm:text-5xl">
             Building thoughtful software, from interface to database
           </h2>

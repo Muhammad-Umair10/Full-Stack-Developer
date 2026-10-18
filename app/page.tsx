@@ -8,6 +8,7 @@ import ProjectSection from "./components/Home/ProjectsSection";
 import CanvasBackground from "./components/ui/CanvasBackground";
 import WhyChooseUs from "./components/Home/WhyChooseUs";
 import Contact from "./components/Home/ContactSection";
+import Footer from "./components/footer";
 export default function Home() {
   return (
     <div className="relative isolate min-h-screen overflow-x-hidden bg-black">
@@ -21,6 +22,7 @@ export default function Home() {
         <ProjectSection />
         <WhyChooseUs />
         <Contact />
+        <Footer />
       </main>
     </div>
   );

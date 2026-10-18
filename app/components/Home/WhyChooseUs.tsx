@@ -69,15 +69,7 @@ export default function WhyChooseUs() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center mb-5 gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-blue-400 backdrop-blur-md"
-          >
-            <span>The Full-Stack Advantage</span>
-          </motion.div>
+         
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

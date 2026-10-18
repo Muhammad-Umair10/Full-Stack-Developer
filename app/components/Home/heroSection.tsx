@@ -17,7 +17,7 @@ const HeroSection = () => {
                     <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/60 via-transparent to-black/15" />
                     <div className="pointer-events-none absolute inset-0 z-10 flex flex-col justify-center px-6 py-24 sm:px-10 md:px-14 lg:px-20">
                         <div className="pointer-events-auto w-full max-w-3xl text-left">
-                            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/70 sm:text-sm">
+                            <p className="mt-10 mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/70 sm:text-sm">
                                 Muhammad Umair · Portfolio
                             </p>
                             <h1 className="break-words text-balance text-3xl font-bold leading-[1.08] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
