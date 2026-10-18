@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import { Mail, Phone, ArrowUp, Code2, Terminal } from "lucide-react";
 import Image from "next/image";
@@ -176,13 +175,12 @@ export default function Footer() {
                     <div className="flex items-center gap-2">
                         <Terminal className="h-3.5 w-3.5 text-blue-500" />
                         <span>
-                            © {new Date().getFullYear()} Muhammad Umair. Built with Next.js,
+                            © 2026 Muhammad Umair. Built with Next.js,
                             Tailwind CSS & Vercel.
                         </span>
                     </div>
 
                     <div className="flex items-center gap-6">
-                        <span>Deployed on Edge</span>
                         <button
                             onClick={scrollToTop}
                             className="inline-flex items-center gap-1.5 text-slate-400 transition-colors hover:text-white"
