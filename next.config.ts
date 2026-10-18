@@ -2,6 +2,13 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  images: {
+    remotePatterns: [
+      new URL(
+        "https://pub-342a3c651bc946c795585c46f7161a33.r2.dev/images/showcase/**",
+      ),
+    ],
+  },
   experimental: {
     agentFeedback: true,
   },
