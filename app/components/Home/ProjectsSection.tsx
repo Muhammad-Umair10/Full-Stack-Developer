@@ -21,24 +21,29 @@ interface Project {
   isFeatured: boolean;
   description: string;
   image: string;
-  liveUrl: string;
-  caseStudyUrl: string;
+  liveUrl?: string;
   tags: string[];
 }
 
 const projectsData: Project[] = [
-  {
-    id: "ndis-solutions",
-    title: "NDIS Solutions",
-    category: "Web Design & Services",
-    categoryType: "corporate",
-    badge: "Client Work",
-    isFeatured: true,
-    description: "Administrative and support portal developed for NDIS service providers featuring responsive layouts, custom forms, and dynamic service pages.",
-    image: "/assets/ndis-solution.png",
-    liveUrl: "https://ndis-solutions.com/",
-    caseStudyUrl: "https://ndis-solutions.com/",
-    tags: ["WordPress", "Elementor Pro", "Tailwind CSS", "PHP"],
+   {
+     id: "cartely-ecommerce",
+     title: "Cartely E-Commerce Store",
+     category: "E-Commerce & Retail",
+     categoryType: "ecommerce",
+     badge: "Company Project",
+     isFeatured: true,
+     description:
+       "Transformed an existing Persian-language e-commerce website into an English-language online store. Converted the interface from Persian to English and RTL to LTR, updated navigation, product sections, promotional banners, and homepage layouts to deliver a professional and responsive shopping experience.",
+     image: "/assets/cartely.webp",
+     tags: [
+       "E-Commerce",
+       "Persian to English",
+       "RTL to LTR",
+       "Website Localization",
+       "UI Development",
+       "Responsive Design"
+     ],
   },
   {
     id: "ethica-rcm-services",
@@ -50,21 +55,28 @@ const projectsData: Project[] = [
     description: "Corporate web portal for medical billing and revenue cycle management, designed for high conversion, clean navigation, and fast performance.",
     image: "/assets/ethicaRcm.png",
     liveUrl: "https://ethicarcmservices.com/",
-    caseStudyUrl: "https://ethicarcmservices.com/",
     tags: ["WordPress", "Elementor Pro", "CSS3", "SEO Optimization"],
   },
-  {
-    id: "nobel-healthcare-rcm",
-    title: "Nobel Healthcare RCM",
-    category: "Healthcare & Corporate",
-    categoryType: "corporate",
-    badge: "Client Work",
+   {
+    id: "biboshi-pakistan",
+    title: "Biboshi Pakistan",
+    category: "E-Commerce & Retail",
+    categoryType: "ecommerce",
+    badge: "Current Company",
     isFeatured: true,
-    description: "Clean, responsive medical billing platform optimized for client onboarding, service showcases, and interactive contact workflows.",
-    image: "/assets/nobel-health.png",
-    liveUrl: "https://nobelhealthcarercm.com/",
-    caseStudyUrl: "https://nobelhealthcarercm.com/",
-    tags: ["WordPress", "Elementor Pro", "PHP", "Responsive Web Design"],
+    description:
+      "Developed and customized a modern e-commerce platform, converting the original Persian-language website into English. Implemented Persian-to-English localization, RTL-to-LTR layout conversion, custom homepage sections, promotional banners, product categories, and responsive layouts.",
+    image: "/assets/biboshi.png",
+    tags: [
+      "E-Commerce",
+      "Persian to English",
+      "RTL to LTR",
+      "WooCommerce",
+      "PHP",
+      "MySQL",
+      "Responsive Design"
+    ],
+    liveUrl: "https://biboshi.pk/",
   },
   {
     id: "brush-brothers",
@@ -76,29 +88,41 @@ const projectsData: Project[] = [
     description: "Modern commercial and residential painting service portal tailored for the Australian market with dynamic service catalogs and quote booking systems.",
     image: "/assets/brushbrothers.png",
     liveUrl: "https://brushbrothers.au/",
-    caseStudyUrl: "https://brushbrothers.au/",
     tags: ["WordPress", "Elementor", "Tailwind CSS", "JavaScript"],
   },
   {
-    id: "biboshi-pakistan",
-    title: "Biboshi Pakistan",
-    category: "E-Commerce & Retail",
-    categoryType: "ecommerce",
-    badge: "Current Company",
+    id: "nobel-healthcare-rcm",
+    title: "Nobel Healthcare RCM",
+    category: "Healthcare & Corporate",
+    categoryType: "corporate",
+    badge: "Client Work",
     isFeatured: true,
-    description: "Built for my current company — a high-conversion retail e-commerce platform equipped with custom product grids, cart management, and seamless mobile responsiveness.",
-    image: "/assets/biboshi.png",
-    liveUrl: "https://biboshi.pk/",
-    caseStudyUrl: "https://biboshi.pk/",
-    tags: ["E-Commerce", "Custom Web Solutions", "PHP", "MySQL", "WooCommerce"],
+    description: "Clean, responsive medical billing platform optimized for client onboarding, service showcases, and interactive contact workflows.",
+    image: "/assets/nobel-health.png",
+    liveUrl: "https://nobelhealthcarercm.com/",
+    tags: ["WordPress", "Elementor Pro", "PHP", "Responsive Web Design"],
   },
+  
+  {
+    id: "ndis-solutions",
+    title: "NDIS Solutions",
+    category: "Web Design & Services",
+    categoryType: "corporate",
+    badge: "Client Work",
+    isFeatured: true,
+    description: "Administrative and support portal developed for NDIS service providers featuring responsive layouts, custom forms, and dynamic service pages.",
+    image: "/assets/ndis-solution.png",
+    liveUrl: "https://ndis-solutions.com/",
+    tags: ["WordPress", "Elementor Pro", "Tailwind CSS", "PHP"],
+  },
+  
+  
+  
 ];
 
 export default function ProjectsSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const prefersReducedMotion = useReducedMotion();
-
-  const filteredProjects = projectsData;
 
   const scrollCarousel = (direction: "left" | "right") => {
     const container = scrollContainerRef.current;
@@ -142,7 +166,7 @@ export default function ProjectsSection() {
               ref={scrollContainerRef}
               className="flex min-w-0 -ml-3 md:-ml-5 overflow-x-hidden overflow-y-hidden scroll-smooth snap-x snap-mandatory no-scrollbar pb-4"
             >
-              {filteredProjects.map((project) => (
+              {projectsData.map((project) => (
                 <motion.div
                   key={project.id}
                   data-slot="carousel-item"
@@ -168,13 +192,14 @@ export default function ProjectsSection() {
                       <div data-slot="card-content" className="flex flex-1 flex-col p-4 sm:p-5">
                         {/* Thumbnail Container */}
                         <div className="relative overflow-hidden rounded-xl border border-border/40 bg-muted/30">
-                          <Link
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-                            aria-label={`Open ${project.title} live website`}
-                          >
+                          {project.liveUrl ? (
+                            <Link
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                              aria-label={`Open ${project.title} live website`}
+                            >
                             <div className="relative z-0 h-full bg-muted/60 aspect-video w-full overflow-hidden">
                               <Image
                                 src={project.image}
@@ -186,7 +211,20 @@ export default function ProjectsSection() {
                                 className="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
                               />
                             </div>
-                          </Link>
+                            </Link>
+                          ) : (
+                            <div className="relative z-0 h-full bg-muted/60 aspect-video w-full overflow-hidden">
+                              <Image
+                                src={project.image}
+                                alt={project.title}
+                                width={1920}
+                                height={1080}
+                                loading="lazy"
+                                decoding="async"
+                                className="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
+                              />
+                            </div>
+                          )}
 
                           {/* Top Badges */}
                           <div className="pointer-events-none absolute inset-x-2.5 top-2.5 flex items-center justify-between gap-2">
@@ -194,7 +232,7 @@ export default function ProjectsSection() {
                               {project.category}
                             </div>
                             <span className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase backdrop-blur-md ${
-                              project.badge === "Featured"
+                              project.badge === "Featured Project"
                                 ? "border-amber-500/30 bg-amber-500/10 text-amber-600 dark:bg-amber-400/15 dark:text-amber-300"
                                 : "border-white/10 bg-background/70 text-muted-foreground dark:bg-slate-900/70"
                             }`}>
@@ -210,23 +248,25 @@ export default function ProjectsSection() {
                               <h3 className="text-lg font-bold text-foreground transition-colors duration-200 group-hover:text-primary">
                                 {project.title}
                               </h3>
-                              <Link
-                                href={project.liveUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg border border-border/60 bg-muted/40 text-muted-foreground transition-all duration-200 hover:border-primary hover:bg-primary hover:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                                aria-label={`Open ${project.title} live website`}
-                                title="Open live link"
-                              >
-                                <ArrowUpRight className="h-4 w-4" />
-                              </Link>
+                              {project.liveUrl && (
+                                <Link
+                                  href={project.liveUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-lg border border-border/60 bg-muted/40 text-muted-foreground transition-all duration-200 hover:border-primary hover:bg-primary hover:text-primary-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                                  aria-label={`Open ${project.title} live website`}
+                                  title="Open live link"
+                                >
+                                  <ArrowUpRight className="h-4 w-4" />
+                                </Link>
+                              )}
                             </div>
                             <p className="mt-2 line-clamp-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">
                               {project.description}
                             </p>
                           </div>
 
-                          {/* Tags & Case Study Link */}
+                          {/* Tags & Live Website Link */}
                           <div className="mt-4 pt-2 border-t border-border/40">
                             <div className="flex flex-wrap gap-1.5">
                               {project.tags.map((tag, idx) => (
@@ -236,13 +276,17 @@ export default function ProjectsSection() {
                               ))}
                             </div>
                             <div className="mt-3.5 pt-2 border-t border-border/30">
-                              <Link
-                                href={project.caseStudyUrl}
-                                className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary transition-colors hover:text-primary/80 hover:underline"
-                              >
-                                <span>View Case Study</span>
-                                <ArrowRight className="h-3 w-3" />
-                              </Link>
+                              {project.liveUrl && (
+                                <Link
+                                  href={project.liveUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary transition-colors hover:text-primary/80 hover:underline"
+                                >
+                                  <span>Visit Live Website</span>
+                                  <ArrowRight className="h-3 w-3" />
+                                </Link>
+                              )}
                             </div>
                           </div>
 

@@ -15,10 +15,13 @@
   src: url("/assets/fonts/Comfortaa-Regular.ttf") format("truetype");
 }
 
-:root {
+/* Scoped to non-admin pages only — admin panel uses its own CSS variables inside .admin-shell */
+:root:not(:has(.admin-shell)) {
   --background: black;
   --foreground: white;
 }
+
+
 
 @theme inline {
   --color-background: var(--background);
@@ -33,7 +36,7 @@ html {
 .site-title{
   font-family: "Comfortaa", sans-serif;
 }
-body {
+body:not(:has(.admin-shell)) {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
@@ -44,8 +47,15 @@ body {
   background: #f14f61;
   color: #fff;
 }
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Comfortaa", ui-sans-serif, system-ui, sans-serif;  color: var(--foreground);
+/* Only apply Comfortaa/custom heading styles outside the admin shell */
+body:not(:has(.admin-shell)) h1,
+body:not(:has(.admin-shell)) h2,
+body:not(:has(.admin-shell)) h3,
+body:not(:has(.admin-shell)) h4,
+body:not(:has(.admin-shell)) h5,
+body:not(:has(.admin-shell)) h6 {
+  font-family: "Comfortaa", ui-sans-serif, system-ui, sans-serif;
+  color: var(--foreground);
   margin: 0;
 }
 
